@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        display: grid;
+        grid-template-areas: 
+            "ar1 ar2"
+            "ar3 ar4";
+        grid-gap:9px;
+    }
+    .container div{
+        overflow: hidden;
+    }
+    .ar1{
+        grid-area: ar1;
+    }
+    .ar2{
+        grid-area: ar2;
+    }
+    .ar3{
+        grid-area: ar3;
+    }
+    .ar4{
+        grid-area: ar4;
+    }
+    img{
+        background-size: cover;
+        height:35vh;
+        width: 20em;
+        transition: transform 1s;
+    }
+    img:hover{
+        cursor: zoom-in;
+        transform: scale(1.4);
+    }
+@media (max-width:1000px){
+  .container{
+    grid-template-areas:
+        "ar1"
+        "ar2"
+        "ar3"
+        "ar4";
+  }
+}
+</style>
+<body>
+    <div class="container">
+        <div class="ar1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozq-2tP8kD6S9DlbfHtxUEiM4om6weDCDi9s0WZO2&s" alt=""></div>
+        <div class="ar2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVAvRk_N4bbo7N_CR9FD-lfxJNpYp_o-3_PfBC88qvKQ&s" alt=""></div>
+        <div class="ar3"><img src="https://media.istockphoto.com/photos/villefranche-on-sea-in-evening-picture-id1145618475?k=20&m=1145618475&s=612x612&w=0&h=_mC6OZt_eWENYUAZz3tLCBTU23uvx5beulDEZHFLsxI=" alt=""></div>
+        <div class="ar4"><img src="https://photographylife.com/wp-content/uploads/2017/01/Best-of-2016-Nasim-Mansurov-20.jpg" alt=""></div>
+    </div>
+</body>
+</html>
