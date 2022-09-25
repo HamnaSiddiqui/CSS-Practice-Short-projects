@@ -1,0 +1,95 @@
+:root{
+    --level-one: translateZ(250px);
+    --level-two:translateZ(200px);
+    --level-three:translateZ(200px);
+    --fw-family: 'Tiro Bangla', serif;
+    --clr: #d6e4f9;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    align-content: center;
+}
+.card{
+    width: 250px;
+}
+.card-content{
+    position: relative;
+    text-align: center;
+    transition: transform 3s;
+    padding: 4em;
+    height: 20vh;
+    transform-style: preserve-3d;
+}
+.card:hover .card-content{
+    transform: rotateY(.5turn);
+}
+.card-front,
+.card-back{
+    position: absolute;
+    padding: 5em 1em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: grid;
+    align-content: center;
+    background-color: pink;
+
+}
+.card-title{
+    text-shadow: 10px 10px 10px BLACK;
+    font-size: 2rem;
+    transform: var(--level-one);
+    order: 2;
+    font-family: var(--fw-family);
+    text-transform: uppercase;
+}
+.card-subtitle{
+    text-shadow: 10px 0 10px BLACK;
+    margin-bottom: 0;
+    margin-top: 1em;
+    transform: var(--level-two);
+    letter-spacing: 2px;
+    font-family: var(--fw-family);
+}
+.back-subtitle{
+    text-shadow: 10px 0 10px black;
+    margin-top: 2em;
+    transform: var(--level-three);
+    letter-spacing: 2px;
+    font-family: var(--fw-family);
+}
+.card-back{
+    transform: rotateY(.5turn);
+    background-color: rgb(235, 193, 200);
+    color: black;
+    box-shadow: 10px 10px 20px 0 gray;
+}
+.card-front{
+    box-shadow: 20px 20px 20px 0 gray;
+    display: grid;
+    background-color: var(--clr);
+    background: url(https://i.pinimg.com/474x/4e/42/0f/4e420f062057cfed87e1797f3a205f64.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
+    color: black;
+}
+
+.card-front::before{
+    content: '';
+    position: absolute;
+    border: 3px solid black;
+    --spacer:.5em;
+    top: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    bottom: var(--spacer);
+    transform: var(--level-one);
+    display: grid;
+
+}
